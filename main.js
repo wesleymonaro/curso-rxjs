@@ -31,3 +31,10 @@ var subsription = subject.subscribe(
     err => console.log(`error ${err}`),
     () => console.log(`Completed`),
 )
+
+//Criando cópia da subsciption
+var subsription2 = subject.subscribe(
+    value => console.log(`My value is ${value}`),
+    err => console.log(`error ${err}`),
+    () => console.log(`Completed`),
+)
