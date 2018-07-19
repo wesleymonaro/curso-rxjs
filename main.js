@@ -1,10 +1,10 @@
 // var subject = new Rx.Subject();
 
 // var subscription = subject.subscribe(
-//     value => console.log(`My value is ${value}`),
-//     err => console.log(`error ${err}`),
+//     value => console.log(`my value is ${value}`),
+//     err => console.log(`Error ${err}`),
 //     () => console.log(`Completed`),
-// )
+// );
 
 // subject.next(55);
 // subject.next(34);
@@ -15,7 +15,7 @@ var observable = Rx.Observable.create(observer => {
         interval = setInterval(() => {
             i++;
             observer.next(parseInt(Math.random() * 10));
-            if (i > 5) {
+            if(i > 5){
                 clearInterval(interval);
                 observer.complete();
             }
@@ -24,17 +24,10 @@ var observable = Rx.Observable.create(observer => {
 
 var subject = new Rx.Subject();
 
-var subSource = observable.subscribe(subject)
+var subSource = observable.subscribe(subject);
 
-var subsription = subject.subscribe(
-    value => console.log(`My value is ${value}`),
-    err => console.log(`error ${err}`),
-    () => console.log(`Completed`),
-)
-
-//Criando cópia da subsciption
-var subsription2 = subject.subscribe(
-    value => console.log(`My value is ${value}`),
-    err => console.log(`error ${err}`),
+var subscription = subject.subscribe(
+    value => console.log(`my value is ${value}`),
+    err => console.log(`Error ${err}`),
     () => console.log(`Completed`),
 )
